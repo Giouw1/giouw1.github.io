@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Computer Engineering Portfolio</title>
+    
+    <!-- We are including Tailwind CSS from a CDN (Content Delivery Network). -->
+    <!-- This gives us access to a library of style classes to make our site look good quickly. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- We'll use the Inter font, which is a clean and modern choice. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* A little bit of custom style to apply the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <!-- Main container for our page content -->
+    <div class="container mx-auto px-4 py-8 md:py-16">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">My Engineering Portfolio</h1>
+            <p class="text-lg text-slate-400">A collection of my projects and development journey.</p>
+        </header>
+
+        <!-- "File Explorer" Section -->
+        <!-- We use a grid layout to arrange our folders. -->
+        <!-- It will have 2 columns on small screens, and 4 on larger screens. -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
+            <!-- ============================================= -->
+            <!-- FOLDER 1: Project Alpha                       -->
+            <!-- ============================================= -->
+            <!-- 
+              The <a> tag (anchor tag) makes the entire block a clickable link.
+              Currently, the 'href="#"' is a placeholder. We will change this later
+              to point to our actual project pages (e.g., "project-alpha.html").
+            -->
+            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+                <!-- Folder Icon (using SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-sky-400 group-hover:text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <!-- Folder Name -->
+                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Project Alpha</p>
+            </a>
+
+            <!-- ============================================= -->
+            <!-- FOLDER 2: Embedded Systems Project            -->
+            <!-- ============================================= -->
+            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-sky-400 group-hover:text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Embedded Systems</p>
+            </a>
+
+            <!-- ============================================= -->
+            <!-- FOLDER 3: Machine Learning Research           -->
+            <!-- ============================================= -->
+            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-sky-400 group-hover:text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">ML Research</p>
+            </a>
+            
+            <!-- ============================================= -->
+            <!-- FOLDER 4: Personal Website (Meta!)            -->
+            <!-- ============================================= -->
+            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-sky-400 group-hover:text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">This Website</p>
+            </a>
+            
+            <!-- You can copy and paste one of the folder blocks to add more! -->
+
+        </div>
+
+    </div>
+
+</body>
+</html>

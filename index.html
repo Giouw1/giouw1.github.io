@@ -28,58 +28,68 @@
 
         <!-- Header Section -->
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">My Computer Engineering Portfolio</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">My Engineering Portfolio</h1>
             <p class="text-lg text-slate-400">A collection of my projects and development journey.</p>
         </header>
 
         <!-- "File Explorer" Section -->
         <!-- We use a grid layout to arrange our folders. -->
-        <!-- It will have 2 columns on small screens, and 4 on larger screens. -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
 
             <!-- ============================================= -->
-            <!-- FOLDER 1: Project Alpha                       -->
+            <!-- FOLDER 1: Project Alpha (div structure)       -->
             <!-- ============================================= -->
             <!-- 
-              The <a> tag (anchor tag) makes the entire block a clickable link.
-              Currently, the 'href="#"' is a placeholder. We will change this later
-              to point to our actual project pages (e.g., "project-alpha.html").
+              The <div> is the visual container for the project.
+              It holds the background, shape, and hover effects.
             -->
-            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
-                <!-- Folder Icon (using img, from web) -->
+            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
+                <!-- 
+                  The <a> tag fills the div, making the whole area clickable.
+                  The p-4 class adds padding for better spacing.
+                -->
+                <a href="#" class="block p-4 text-center">
                 <img src="imagens\download-removebg-preview.png"
                  alt="Folder Icon" class="h-16 w-16 mx-auto">
-                <!-- Folder Name -->
-                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Project Alpha</p>
-            </a>
+                    </svg>
+                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Project Alpha</p>
+                </a>
+            </div>
 
             <!-- ============================================= -->
             <!-- FOLDER 2: Embedded Systems Project            -->
             <!-- ============================================= -->
-            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
+                <a href="#" class="block p-4 text-center">
                 <img src="imagens\download-removebg-preview.png"
                  alt="Folder Icon" class="h-16 w-16 mx-auto">
-
-                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Embedded Systems</p>
-            </a>
+                    </svg>
+                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Embedded Systems</p>
+                </a>
+            </div>
 
             <!-- ============================================= -->
             <!-- FOLDER 3: Machine Learning Research           -->
             <!-- ============================================= -->
-            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
+                <a href="#" class="block p-4 text-center">
                 <img src="imagens\download-removebg-preview.png"
                  alt="Folder Icon" class="h-16 w-16 mx-auto">
-                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">ML Research</p>
-            </a>
+                    </svg>
+                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">ML Research</p>
+                </a>
+            </div>
             
             <!-- ============================================= -->
             <!-- FOLDER 4: Personal Website (Meta!)            -->
             <!-- ============================================= -->
-            <a href="#" class="group block p-4 bg-slate-800 rounded-lg text-center hover:bg-sky-900 transition-colors duration-200">
+            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
+                <a href="#" class="block p-4 text-center">
                 <img src="imagens\download-removebg-preview.png"
                  alt="Folder Icon" class="h-16 w-16 mx-auto">
-                <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">This Website</p>
-            </a>
+                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">This Website</p>
+                </a>
+            </div>
             
             <!-- You can copy and paste one of the folder blocks to add more! -->
 

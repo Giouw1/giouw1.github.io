@@ -1,115 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovanni Faletti - Computer Engineering Portfolio</title>
+    <meta name="description" content="Portfólio de Projetos - Engenharia e Computação">
+    <title>Portfólio | [Seu Nome]</title>
     
-    <!-- We are including Tailwind CSS from a CDN (Content Delivery Network). -->
-    <!-- This gives us access to a library of style classes to make our site look good quickly. -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- We'll use the Inter font, which is a clean and modern choice. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
     <style>
-        /* A little bit of custom style to apply the Inter font */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+            --card-bg: #1e293b;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        /* Perfil / Apresentação */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 4rem;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            header {
+                flex-direction: row;
+                text-align: left;
+                align-items: center;
+            }
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            flex-shrink: 0;
+        }
+
+        .header-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.125rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .header-content p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-family: var(--font-mono);
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.01em;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+            margin-top: 4px;
+        }
+
+        /* Habilidades */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-family: var(--font-mono);
+        }
+
+        /* Grid de Projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tech-stack span {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
         }
     </style>
 </head>
-<body class="bg-slate-900 text-white">
+<body>
 
-    <!-- Main container for our page content -->
-    <div class="container mx-auto px-4 py-8 md:py-16">
-
-        <!-- Header Section -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">My Engineering Portfolio</h1>
-            <p class="text-lg text-slate-400">A collection of my projects and development journey.</p>
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="Foto de [Seu Nome]" class="profile-img">
+            <div class="header-content">
+                <h1>Seu Nome Completo</h1>
+                <div class="subtitle">Engenharia / Área de Atuação</div>
+                <p>
+                    Breve resumo descritivo contendo sua formação, áreas de interesse, 
+                    experiência acadêmica ou profissional e tecnologias de foco.
+                </p>
+                <div class="links">
+                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:seu-email@dominio.com">E-mail</a>
+                    <a href="curriculo.pdf" target="_blank">Currículo (PDF)</a>
+                </div>
+            </div>
         </header>
 
-        <!-- "File Explorer" Section -->
-        <!-- We use a grid layout to arrange our folders. -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-
-            <!-- ============================================= -->
-            <!-- FOLDER 1: Project Alpha (div structure)       -->
-            <!-- ============================================= -->
-            <!-- 
-              The <div> is the visual container for the project.
-              It holds the background, shape, and hover effects.
-            -->
-            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <!-- 
-                  The <a> tag fills the div, making the whole area clickable.
-                  The p-4 class adds padding for better spacing.
-                -->
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    </svg>
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Video Game: graph?</p>
-                </a>
+        <section id="habilidades">
+            <h2>Tecnologias & Habilidades</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Engenharia de Dados</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Git / Linux</span>
             </div>
+        </section>
 
-            <!-- ============================================= -->
-            <!-- FOLDER 2: Embedded Systems Project            -->
-            <!-- ============================================= -->
-            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    </svg>
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Web Scrapping</p>
-                </a>
-            </div>
+        <section id="projetos">
+            <h2>Projetos Selecionados</h2>
+            <div class="projects-grid">
 
-            <!-- ============================================= -->
-            <!-- FOLDER 3: Machine Learning Research           -->
-            <!-- ============================================= -->
-            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    </svg>
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">ML Research Project</p>
-                </a>
-            </div>
-            
-            <!-- ============================================= -->
-            <!-- FOLDER 4: Personal Website (Meta!)            -->
-            <!-- ============================================= -->
-            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">RL Research Project</p>
-                </a>
-            </div>
-            
-            <!-- You can copy and paste one of the folder blocks to add more! -->
-            <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Embedded Systems</p>
-                </a>
-            </div>
-                        <div class="group bg-slate-800 rounded-lg hover:bg-sky-900 transition-colors duration-200">
-                <a href="#" class="block p-4 text-center">
-                <img src="imagens\download-removebg-preview.png"
-                 alt="Folder Icon" class="h-16 w-16 mx-auto">
-                    <p class="mt-2 text-sm font-medium text-slate-300 group-hover:text-white">Pratical ML/RL project</p>
-                </a>
-            </div>
+                <!-- Projeto 1 -->
+                <article class="project-card">
+                    <div>
+                        <h3>Nome do Projeto 1</h3>
+                        <p>
+                            Descrição concisa do escopo do projeto, detalhando o problema abordado, 
+                            a metodologia adotada e os resultados obtidos.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>•</span>
+                            <span>Pandas</span>
+                            <span>•</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/seu-usuario/projeto-1" target="_blank" rel="noopener noreferrer">Repositório &rarr;</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Artigo / Demo &rarr;</a>
+                    </div>
+                </article>
 
+                <!-- Projeto 2 -->
+                <article class="project-card">
+                    <div>
+                        <h3>Nome do Projeto 2</h3>
+                        <p>
+                            Implementação de algoritmos ou arquiteturas com foco em desempenho computacional 
+                            ou análise quantitativa de dados.
+                        </p>
+                        <div class="tech-stack">
+                            <span>C++</span>
+                            <span>•</span>
+                            <span>CUDA</span>
+                            <span>•</span>
+                            <span>CMake</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/seu-usuario/projeto-2" target="_blank" rel="noopener noreferrer">Repositório &rarr;</a>
+                    </div>
+                </article>
 
-        </div>
+            </div>
+        </section>
 
+        <footer>
+            <p>&copy; 2026 Seu Nome. Hospedado via GitHub Pages.</p>
+        </footer>
     </div>
 
 </body>
